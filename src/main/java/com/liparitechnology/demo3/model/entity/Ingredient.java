@@ -21,8 +21,8 @@ public class Ingredient {
     String ingredientName;
     int quantity;
 
-    @ManyToMany(mappedBy = "allIngredient")
-    private Set<Recipe> allrecipe = new HashSet<>();
+    @OneToMany(mappedBy = "ingredient")
+    Set<IngredientsToRecipe> ingredients = new HashSet<>();
 
 
 

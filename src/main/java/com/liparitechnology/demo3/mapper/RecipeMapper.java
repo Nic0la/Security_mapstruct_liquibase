@@ -4,7 +4,7 @@ import com.liparitechnology.demo3.dto.RecipeDto;
 import com.liparitechnology.demo3.model.entity.Recipe;
 import org.mapstruct.Mapper;
 
-@Mapper
+@Mapper(componentModel = "spring")
 public interface RecipeMapper {
     RecipeDto toDto(Recipe recipe);
 }

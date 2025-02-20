@@ -21,14 +21,9 @@ public class Recipe {
     String recipeName;
 
     @ManyToOne
-    @JoinColumn(name = "recipe_id")
+    @JoinColumn(name = "category_id")
     Category category;
 
-    @ManyToMany
-    @JoinTable(
-            name = "ingredient_for_recipe",
-            joinColumns = @JoinColumn(name = "recipe_id"),
-            inverseJoinColumns = @JoinColumn(name = "ingredient_id")
-    )
-    private Set<Ingredient> allIngredient = new HashSet<>();
+    @OneToMany(mappedBy = "recipe")
+    Set<IngredientsToRecipe> ingredients = new HashSet<>();
 }
