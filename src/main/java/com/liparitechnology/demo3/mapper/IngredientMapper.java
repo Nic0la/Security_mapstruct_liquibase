@@ -5,5 +5,6 @@ import org.mapstruct.Mapper;
 
 @Mapper
 public interface IngredientMapper {
+
     IngredientDto toDto(IngredientDto ingredientDto);
 }
